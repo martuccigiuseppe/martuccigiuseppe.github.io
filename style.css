@@ -240,3 +240,45 @@ footer {
 .hobby-section:hover {
     transform: translateY(-3px);
 }
+
+/* ========================= */
+/* HOBBY GRID MODERNO       */
+/* ========================= */
+
+.hobby-grid {
+    margin-top: 80px;
+}
+
+.hobby-card {
+    display: block;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--accent);
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+.hobby-card h2 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.hobby-card p {
+    color: var(--accent);
+    margin: 0;
+}
+
+.hobby-number {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.hobby-card:hover {
+    transform: translateX(6px);
+    border-color: var(--text);
+}
+
+.hobby-card:hover p {
+    color: var(--text);
+}
