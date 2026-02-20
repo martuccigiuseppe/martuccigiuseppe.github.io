@@ -214,3 +214,29 @@ footer {
     }
 
 }
+
+
+
+.hobby-section {
+    margin-bottom: 80px;
+}
+
+.hobby-section a {
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    transition: 0.3s ease;
+}
+
+.hobby-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hobby-section p {
+    color: var(--accent);
+}
+
+.hobby-section:hover {
+    transform: translateY(-3px);
+}
