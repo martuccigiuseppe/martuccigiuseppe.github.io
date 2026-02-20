@@ -282,3 +282,54 @@ footer {
 .hobby-card:hover p {
     color: var(--text);
 }
+
+
+
+/* ========================= */
+/* HOBBY ARTISTIC STYLE     */
+/* ========================= */
+
+.hobby-vertical {
+    margin-top: 100px;
+}
+
+.hobby-block {
+    display: block;
+    padding: 60px 0;
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.hobby-index {
+    position: absolute;
+    left: -60px;
+    top: 60px;
+    font-size: 14px;
+    letter-spacing: 4px;
+    opacity: 0.3;
+}
+
+.hobby-block h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    margin: 0;
+    transition: 0.4s ease;
+}
+
+/* Hover artistico */
+.hobby-block:hover {
+    transform: translateX(20px);
+}
+
+.hobby-block:hover h2 {
+    letter-spacing: 3px;
+}
+
+/* Rimuove qualsiasi colore blu */
+.hobby-block:visited,
+.hobby-block:active {
+    color: var(--text);
+}
