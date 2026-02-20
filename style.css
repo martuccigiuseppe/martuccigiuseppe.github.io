@@ -142,3 +142,75 @@ footer {
     stroke: var(--text);
     transform: scale(1.15);
 }
+
+
+
+/* ============================= */
+/* CV EDITORIAL TIMELINE STYLE  */
+/* ============================= */
+
+.cv-wrapper {
+    position: relative;
+    margin-top: 80px;
+    padding-left: 60px;
+}
+
+.cv-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--accent);
+    opacity: 0.4;
+}
+
+.cv-item {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.cv-date {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.cv-content h3 {
+    margin: 0 0 6px 0;
+    font-weight: 500;
+}
+
+.cv-content p {
+    margin: 4px 0;
+    color: var(--accent);
+    line-height: 1.6;
+}
+
+/* Punto sulla linea */
+.cv-item::before {
+    content: "";
+    position: absolute;
+    left: -48px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    background: var(--bg);
+    border: 2px solid var(--text);
+    border-radius: 50%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .cv-wrapper {
+        padding-left: 40px;
+    }
+
+    .cv-date {
+        font-size: 22px;
+    }
+
+}
