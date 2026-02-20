@@ -7,78 +7,98 @@
 
 <style>
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== DARK MODE DEFAULT ===== */
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.25);
+    --bg: #0f172a;
+    --text: white;
+    --glass-bg: rgba(255,255,255,0.08);
+    --glass-border: rgba(255,255,255,0.25);
+    --light-glow: rgba(255,255,255,0.15);
+}
+
+/* ===== LIGHT MODE AUTOMATIC ===== */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f2f2f7;
+        --text: #111;
+        --glass-bg: rgba(255,255,255,0.6);
+        --glass-border: rgba(0,0,0,0.1);
+        --light-glow: rgba(0,0,0,0.08);
+    }
 }
 
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0f172a;
-    color: white;
+    background: var(--bg);
+    color: var(--text);
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Dynamic light effect */
+/* ===== Dynamic Light ===== */
 .light {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    background: radial-gradient(circle, var(--light-glow) 0%, transparent 60%);
     pointer-events: none;
     transform: translate(-50%, -50%);
     transition: 0.1s;
     z-index: 0;
 }
 
-/* Glass card */
-.hero {
+/* ===== Sections ===== */
+.section {
     position: relative;
     z-index: 1;
-    margin: 150px auto;
+    margin: 140px auto;
     width: 90%;
-    max-width: 700px;
+    max-width: 800px;
     padding: 60px;
-    border-radius: 28px;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    border-radius: 30px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     text-align: center;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
-.hero h1 {
-    font-size: 2.6rem;
-    margin-bottom: 10px;
+.section h1,
+.section h2 {
+    margin-bottom: 15px;
 }
 
-.hero p {
-    opacity: 0.8;
+.section p {
+    opacity: 0.85;
+    line-height: 1.6;
 }
 
-/* iPhone style floating nav */
+/* ===== Navbar ===== */
 .navbar {
     position: fixed;
-    bottom: 30px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    background: rgba(255,255,255,0.08);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 40px;
-    padding: 12px 28px;
+    border-radius: 50px;
+    padding: 12px 30px;
     display: flex;
-    gap: 35px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    gap: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    z-index: 10;
 }
 
 .navbar a {
-    color: white;
+    color: var(--text);
     text-decoration: none;
     font-size: 14px;
     opacity: 0.7;
@@ -89,11 +109,40 @@ body {
     opacity: 1;
 }
 
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+
+    .section {
+        padding: 35px;
+        margin: 100px 20px;
+    }
+
+    .section h1 {
+        font-size: 1.8rem;
+    }
+
+    .section h2 {
+        font-size: 1.4rem;
+    }
+
+    .navbar {
+        width: 92%;
+        justify-content: space-around;
+        gap: 15px;
+        padding: 10px 15px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+}
+
 footer {
     text-align: center;
-    margin-top: 60px;
-    opacity: 0.5;
+    margin: 80px 0 40px;
     font-size: 14px;
+    opacity: 0.5;
 }
 
 </style>
@@ -102,16 +151,33 @@ footer {
 
 <div class="light" id="light"></div>
 
-<div class="hero">
+<section class="section" id="home">
     <h1>Giuseppe Martucci</h1>
     <p>Cyber & Tech Risk Consultant</p>
-</div>
+</section>
+
+<section class="section" id="servizi">
+    <h2>Servizi</h2>
+    <p>Cyber Risk Assessment</p>
+    <p>Compliance NIS2 & DORA</p>
+    <p>IT Governance & Controlli ICT</p>
+</section>
+
+<section class="section" id="chisono">
+    <h2>Chi Sono</h2>
+    <p>Supporto aziende nella gestione dei rischi tecnologici e nella compliance normativa.</p>
+</section>
+
+<section class="section" id="contatti">
+    <h2>Contatti</h2>
+    <p>Email: tuaemail@email.it</p>
+</section>
 
 <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Servizi</a>
-    <a href="#">Chi Sono</a>
-    <a href="#">Contatti</a>
+    <a href="#home">Home</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#chisono">Chi Sono</a>
+    <a href="#contatti">Contatti</a>
 </div>
 
 <footer>
@@ -119,12 +185,19 @@ footer {
 </footer>
 
 <script>
-const light = document.getElementById("light");
 
-document.addEventListener("mousemove", (e) => {
-    light.style.left = e.pageX + "px";
-    light.style.top = e.pageY + "px";
-});
+/* Light effect only desktop */
+if (window.innerWidth > 768) {
+    const light = document.getElementById("light");
+
+    document.addEventListener("mousemove", (e) => {
+        light.style.left = e.pageX + "px";
+        light.style.top = e.pageY + "px";
+    });
+} else {
+    document.getElementById("light").style.display = "none";
+}
+
 </script>
 
 </body>
