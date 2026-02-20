@@ -65,6 +65,13 @@ body {
     text-align: center;
 }
 
+.subtitle {
+    margin-top: 18px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
 /* Titles */
 h1 {
     font-size: 42px;
