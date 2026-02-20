@@ -107,16 +107,18 @@ footer {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    gap: 28px;
+    gap: 32px;
 }
 
-.social a {
-    color: var(--accent);
-    opacity: 0.6;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.social svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    transition: 0.3s ease;
 }
 
-.social a:hover {
-    opacity: 1;
+.social a:hover svg {
+    stroke: var(--text);
     transform: scale(1.15);
 }
