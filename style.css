@@ -56,23 +56,33 @@ body {
 
 /* Home big name */
 .big-name {
-    height: 95vh;
+    min-height: 88vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(40px, 8vw, 100px);
-    font-weight: 600;
+    flex-direction: column;
     text-align: center;
 }
 
+.name {
+    font-size: clamp(42px, 7vw, 92px);
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1.05;
+}
+
 .subtitle {
-    margin-top: 18px;
-    font-size: clamp(14px, 2vw, 20px);
+    margin-top: 22px;
+    font-size: clamp(14px, 1.8vw, 20px);
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--accent);
     opacity: 0.8;
+}
+
+.social {
+    margin-top: 28px;
 }
 
 /* Titles */
