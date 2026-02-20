@@ -102,3 +102,19 @@ footer {
     font-size: 13px;
     color: var(--accent);
 }
+
+.social {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social a {
+    color: var(--accent);
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a:hover {
+    color: var(--text);
+    transform: scale(1.1);
+}
