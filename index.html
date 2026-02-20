@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giuseppe Martucci</title>
+
+<style>
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Dynamic light effect */
+.light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.1s;
+    z-index: 0;
+}
+
+/* Glass card */
+.hero {
+    position: relative;
+    z-index: 1;
+    margin: 150px auto;
+    width: 90%;
+    max-width: 700px;
+    padding: 60px;
+    border-radius: 28px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
+/* iPhone style floating nav */
+.navbar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    padding: 12px 28px;
+    display: flex;
+    gap: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="light" id="light"></div>
+
+<div class="hero">
+    <h1>Giuseppe Martucci</h1>
+    <p>Cyber & Tech Risk Consultant</p>
+</div>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Servizi</a>
+    <a href="#">Chi Sono</a>
+    <a href="#">Contatti</a>
+</div>
+
+<footer>
+© 2026 Giuseppe Martucci
+</footer>
+
+<script>
+const light = document.getElementById("light");
+
+document.addEventListener("mousemove", (e) => {
+    light.style.left = e.pageX + "px";
+    light.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>
