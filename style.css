@@ -72,7 +72,7 @@ body {
 }
 
 .subtitle {
-    margin-top: 22px;
+    margin-top: 32px;
     font-size: clamp(14px, 1.8vw, 20px);
     font-weight: 400;
     letter-spacing: 2.5px;
