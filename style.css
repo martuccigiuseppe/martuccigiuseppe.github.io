@@ -67,9 +67,12 @@ body {
 
 .subtitle {
     margin-top: 18px;
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     color: var(--accent);
+    opacity: 0.8;
 }
 
 /* Titles */
