@@ -6,7 +6,6 @@
 <title>CV - Giuseppe Martucci</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <nav class="navbar">
@@ -20,60 +19,63 @@
 
 <h1>Curriculum</h1>
 
-<p class="cv-intro">
-Cyber & Tech Risk Consultant con focus su governance ICT, cybersecurity
-e implementazione di controlli in contesti regolamentati.
-Specializzato in NIS2, GDPR e ISO/IEC 27001.
-</p>
+<div class="timeline">
 
-<div class="cv-wrapper">
-
-    <div class="cv-item reveal">
-        <div class="cv-date">2024 — Presente</div>
-        <div class="cv-content">
+    <div class="timeline-item reveal">
+        <div class="timeline-date">2024 — Presente</div>
+        <div class="timeline-content">
             <h3>Cyber & Tech Risk Consultant · Milano</h3>
-
-            <ul class="cv-list">
-                <li>Assessment e gestione del rischio ICT per organizzazioni complesse</li>
-                <li>Implementazione framework ISO/IEC 27001</li>
+            <ul>
+                <li>ICT Risk Assessment per organizzazioni complesse</li>
+                <li>Implementazione controlli ISO/IEC 27001</li>
                 <li>Compliance NIS2 & DORA</li>
-                <li>Supporto audit e miglioramento controlli interni</li>
+                <li>Supporto audit e miglioramento framework governance</li>
             </ul>
-
         </div>
     </div>
 
-    <div class="cv-item reveal">
-        <div class="cv-date">2022 — 2024</div>
-        <div class="cv-content">
+    <div class="timeline-item reveal">
+        <div class="timeline-date">2022 — 2024</div>
+        <div class="timeline-content">
             <h3>Laurea Magistrale · Cyber Risk Strategy and Governance</h3>
             <p>Università Bocconi & Politecnico di Milano</p>
-
         </div>
     </div>
 
-    <div class="cv-item reveal">
-        <div class="cv-date">2019 — 2022</div>
-        <div class="cv-content">
+    <div class="timeline-item reveal">
+        <div class="timeline-date">2019 — 2022</div>
+        <div class="timeline-content">
             <h3>Laurea Triennale · Economia Aziendale e Management</h3>
             <p>Università Bocconi di Milano</p>
-
         </div>
     </div>
 
 </div>
 
-<h2 class="skills-title reveal">Skills</h2>
+<h2 class="skills-title reveal">Competenze chiave</h2>
 
-<div class="skills-grid reveal">
-    <div>Cyber Risk Assessment</div>
-    <div>ICT Governance</div>
-    <div>ISO/IEC 27001</div>
-    <div>NIS2</div>
-    <div>DORA</div>
-    <div>GDPR</div>
-    <div>Internal Controls</div>
-    <div>Regulatory Compliance</div>
+<div class="skills reveal">
+
+    <div class="skill" data-level="90">
+        <div class="skill-name">Cyber Risk Assessment</div>
+        <div class="skill-bar"><span></span></div>
+    </div>
+
+    <div class="skill" data-level="85">
+        <div class="skill-name">ICT Governance</div>
+        <div class="skill-bar"><span></span></div>
+    </div>
+
+    <div class="skill" data-level="88">
+        <div class="skill-name">ISO/IEC 27001</div>
+        <div class="skill-bar"><span></span></div>
+    </div>
+
+    <div class="skill" data-level="80">
+        <div class="skill-name">NIS2 / DORA</div>
+        <div class="skill-bar"><span></span></div>
+    </div>
+
 </div>
 
 </div>
@@ -82,8 +84,9 @@ Specializzato in NIS2, GDPR e ISO/IEC 27001.
 © 2026 Giuseppe Martucci
 </footer>
 
-  <script>
-const elements = document.querySelectorAll('.reveal');
+<script>
+/* reveal animation */
+const reveals = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -91,12 +94,26 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add('visible');
     }
   });
-}, {
-  threshold: 0.2
-});
+}, { threshold: 0.2 });
 
-elements.forEach(el => observer.observe(el));
+reveals.forEach(el => observer.observe(el));
+
+/* skill bar animation */
+const skills = document.querySelectorAll('.skill');
+
+skills.forEach(skill => {
+  const level = skill.getAttribute('data-level');
+  const bar = skill.querySelector('span');
+
+  const skillObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      bar.style.width = level + '%';
+    }
+  }, { threshold: 0.5 });
+
+  skillObserver.observe(skill);
+});
 </script>
-  
+
 </body>
 </html>
