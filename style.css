@@ -296,7 +296,12 @@ p {
 
 @media (max-width: 768px) {
     .cv-wrapper {
-        padding-left: 40px;
+        padding-left: 70px;
+    }
+
+    .cv-wrapper::before,
+    .cv-item::before {
+        left: 30px;
     }
     .hobby-index {
         display: none;
