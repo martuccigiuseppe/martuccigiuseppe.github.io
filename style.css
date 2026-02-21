@@ -144,45 +144,43 @@ p {
 }
 
 /* ========================= */
-/* CV TIMELINE DEFINITIVO  */
+/* TIMELINE ROBUSTA          */
 /* ========================= */
 
 .cv-wrapper {
     position: relative;
     margin-top: 80px;
-    padding-left: 100px; /* spazio per timeline */
+    padding-left: 80px;
 }
 
-/* Linea verticale */
+/* LINEA */
 .cv-wrapper::before {
     content: "";
     position: absolute;
-    left: 40px;      /* centro timeline */
     top: 0;
     bottom: 0;
+    left: 32px;
     width: 2px;
     background: var(--accent-soft);
 }
 
-/* Singolo blocco */
+/* ITEM */
 .cv-item {
     position: relative;
-    margin-bottom: 90px;
+    margin-bottom: 80px;
 }
 
-/* Pallino perfettamente centrato */
+/* PALLINO */
 .cv-item::before {
     content: "";
     position: absolute;
-    left: 40px;              /* IDENTICO alla linea */
-    top: 12px;               /* allineato alla data */
+    top: 6px;
+    left: -48px; /* calcolato rispetto al padding */
     width: 14px;
     height: 14px;
-    transform: translateX(-50%);
     background: var(--bg);
     border: 2px solid var(--text);
     border-radius: 50%;
-    z-index: 2;
 }
 
 /* Hover elegante */
@@ -295,14 +293,19 @@ p {
 }
 
 @media (max-width: 768px) {
+
     .cv-wrapper {
-        padding-left: 70px;
+        padding-left: 60px;
     }
 
-    .cv-wrapper::before,
-    .cv-item::before {
-        left: 30px;
+    .cv-wrapper::before {
+        left: 20px;
     }
+
+    .cv-item::before {
+        left: -40px; /* 60 - 40 = 20 */
+    }
+
     .hobby-index {
         display: none;
     }
