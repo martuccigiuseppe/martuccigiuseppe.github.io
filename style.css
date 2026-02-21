@@ -144,20 +144,20 @@ p {
 }
 
 /* ========================= */
-/* CV TIMELINE               */
+/* CV TIMELINE FIXED        */
 /* ========================= */
 
 .cv-wrapper {
     position: relative;
     margin-top: 80px;
-    padding-left: 80px;
+    padding-left: 90px; /* spazio per linea + pallino */
 }
 
 /* Linea verticale */
 .cv-wrapper::before {
     content: "";
     position: absolute;
-    left: 30px;          /* centro della timeline */
+    left: 35px;        /* posizione fissa della linea */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -170,19 +170,19 @@ p {
     margin-bottom: 90px;
 }
 
-/* Pallino centrato perfetto */
+/* Pallino perfettamente centrato sulla linea */
 .cv-item::before {
     content: "";
     position: absolute;
-    left: 30px;
-    top: 8px;
-    width: 14px;
-    height: 14px;
+    left: 35px;               /* stessa posizione della linea */
+    top: 0;
+    transform: translate(-50%, 8px);    width: 16px;
+    height: 16px;
     transform: translateX(-50%);
     background: var(--bg);
     border: 2px solid var(--text);
     border-radius: 50%;
-    transition: 0.3s ease;
+    z-index: 2;
 }
 
 /* Hover elegante */
