@@ -7,22 +7,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-const elements = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
-elements.forEach(el => observer.observe(el));
-</script>
-
 <body>
 
 <nav class="navbar">
@@ -98,5 +82,21 @@ Specializzato in NIS2, GDPR e ISO/IEC 27001.
 © 2026 Giuseppe Martucci
 </footer>
 
+  <script>
+const elements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+  
 </body>
 </html>
