@@ -144,40 +144,40 @@ p {
 }
 
 /* ========================= */
-/* CV TIMELINE FIXED        */
+/* CV TIMELINE DEFINITIVO  */
 /* ========================= */
 
 .cv-wrapper {
     position: relative;
     margin-top: 80px;
-    padding-left: 90px; /* spazio per linea + pallino */
+    padding-left: 100px; /* spazio per timeline */
 }
 
 /* Linea verticale */
 .cv-wrapper::before {
     content: "";
     position: absolute;
-    left: 35px;        /* posizione fissa della linea */
+    left: 40px;      /* centro timeline */
     top: 0;
     bottom: 0;
     width: 2px;
     background: var(--accent-soft);
 }
 
-/* Singola voce */
+/* Singolo blocco */
 .cv-item {
     position: relative;
     margin-bottom: 90px;
 }
 
-/* Pallino perfettamente centrato sulla linea */
+/* Pallino perfettamente centrato */
 .cv-item::before {
     content: "";
     position: absolute;
-    left: 35px;               /* stessa posizione della linea */
-    top: 0;
-    transform: translate(-50%, 8px);    width: 16px;
-    height: 16px;
+    left: 40px;              /* IDENTICO alla linea */
+    top: 12px;               /* allineato alla data */
+    width: 14px;
+    height: 14px;
     transform: translateX(-50%);
     background: var(--bg);
     border: 2px solid var(--text);
