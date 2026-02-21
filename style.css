@@ -150,49 +150,44 @@ p {
 .cv-wrapper {
     position: relative;
     margin-top: 80px;
-    padding-left: 60px;
+    padding-left: 80px;
 }
 
+/* Linea verticale */
 .cv-wrapper::before {
     content: "";
     position: absolute;
-    left: 20px;
+    left: 30px;          /* centro della timeline */
     top: 0;
     bottom: 0;
-    width: 1px;
+    width: 2px;
     background: var(--accent-soft);
 }
 
+/* Singola voce */
 .cv-item {
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 90px;
 }
 
+/* Pallino centrato perfetto */
 .cv-item::before {
     content: "";
     position: absolute;
-    left: -48px;
-    top: 12px;
-    width: 10px;
-    height: 10px;
+    left: 30px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    transform: translateX(-50%);
     background: var(--bg);
     border: 2px solid var(--text);
     border-radius: 50%;
+    transition: 0.3s ease;
 }
 
-.cv-date {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.cv-content h3 {
-    margin: 0 0 6px 0;
-    font-weight: 500;
-}
-
-.cv-content p {
-    margin: 4px 0;
+/* Hover elegante */
+.cv-item:hover::before {
+    background: var(--text);
 }
 
 /* ========================= */
