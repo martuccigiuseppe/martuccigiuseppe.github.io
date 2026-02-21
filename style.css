@@ -196,6 +196,68 @@ p {
 }
 
 /* ========================= */
+/* CV ADVANCED               */
+/* ========================= */
+
+.cv-intro {
+    margin-bottom: 60px;
+    font-size: 18px;
+    max-width: 700px;
+}
+
+.cv-list {
+    margin: 15px 0 20px;
+    padding-left: 18px;
+}
+
+.cv-list li {
+    margin-bottom: 8px;
+}
+
+.cv-tags {
+    margin-top: 20px;
+}
+
+.cv-tags span {
+    display: inline-block;
+    margin: 6px 8px 6px 0;
+    padding: 6px 12px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    transition: 0.25s ease;
+}
+
+.cv-tags span:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.skills-title {
+    margin-top: 100px;
+}
+
+.skills-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.skills-grid div {
+    padding: 14px;
+    border: 1px solid var(--border-soft);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.skills-grid div:hover {
+    border-color: var(--text);
+}
+
+/* ========================= */
 /* HOBBY                     */
 /* ========================= */
 
