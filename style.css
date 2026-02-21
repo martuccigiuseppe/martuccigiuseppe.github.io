@@ -322,3 +322,24 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* Uniforma tipografia CV */
+.cv-date {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.cv-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+}
+
+.cv-content p,
+.cv-list li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--accent);
+}
